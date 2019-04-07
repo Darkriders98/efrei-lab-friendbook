@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>
@@ -23,15 +23,17 @@
 
 <form action="index.php" method="post">
     Name: <input type="text" name="name">
-    <input type="submit" style="border-radius: 20%; background-color: darkgoldenrod">
+    <input type="submit" style="border-radius: 20%; background-color: darkgoldenrod" value="Add a friend">
 </form>
 
 <?php
 $filename = 'friends.txt';
 $file = fopen($filename, "a");
 
-if (array_key_exists('name', $_POST)) {
-    fwrite($file, $_POST['name'] . "\n");
+if (isset($_POST['name'])) {
+    if ($_POST['name'] != "") {
+        fwrite($file, $_POST['name'] . "\n");
+    }
 }
 
 fclose($file);
@@ -46,32 +48,46 @@ $filename = 'friends.txt';
 $file = fopen($filename, "r");
 
 $nameFilter = "";
+$startingWith = FALSE;
 
-if (array_key_exists('nameFilter', $_POST)){
+if (isset($_POST['nameFilter'])) {
     $nameFilter = $_POST['nameFilter'];
 }
+
+if (isset($_POST['startingWith'])){
+    $startingWith = $_POST['startingWith'];
+}
+
 
 echo "<ul>";
 while (!feof($file)) {
     $names = fgets($file);
-    if ($nameFilter == "") {
-        if ($names != "") {
-            echo "<li>$names</li><br>";
-        }
-    }
-    else{
-        if ($names == $nameFilter){
-            echo "<li>$names</li><br>";
+    if ($names != "") {
+        if ($nameFilter == "") {
+            echo "<li>$names</li>";
+        } else {
+            $result = strstr($names, $nameFilter);
+            if (!$startingWith) {
+                if ($result != "") {
+                    echo "<li>$names</li>";
+                }
+            } else {
+                if ($result == $names){
+                    echo "<li>$names</li>";
+                }
+            }
         }
     }
 }
 echo "</ul>";
+
 fclose($file);
 ?>
 
 <form action="index.php" method="post">
-    <input type="text" name="nameFilter" value="<?=$nameFilter?>" placeholder="Name filter">
-    <input type="submit" style="border-radius: 20%; background-color: darkgoldenrod">
+    <input type="text" name="nameFilter" value="<?= $nameFilter ?>" placeholder="Name filter">
+    <input type="checkbox" name="startingWith" value="TRUE">Only names started with</input>
+    <input type="submit" style="border-radius: 20%; background-color: darkgoldenrod" value="Filter list">
 </form>
 
 
