@@ -14,9 +14,9 @@
 </header>
 
 <ul id="navbar">
-<!--    <li><a href="html/index.html">Home</a></li>-->
-<!--    <li><a href="html/tasks.html">Tasks</a></li>-->
-<!--    <li><a href="html/shopping.html">Shopping</a></li>-->
+    <li><a href="https://darkriders98.github.io/index.html">Home</a></li>
+    <li><a href="https://darkriders98.github.io/tasks.html">Tasks</a></li>
+    <li><a href="https://darkriders98.github.io/shopping.html">Shopping</a></li>
     <li><a href="index.php">Friend's book</a></li>
     <li><a href="https://www.blizzard.com/en-us/">Blizzard website</a></li>
 </ul>
