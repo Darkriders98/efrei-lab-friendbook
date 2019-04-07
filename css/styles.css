@@ -1,0 +1,138 @@
+body{
+    margin-left: 200px;
+    background-color: dimgray;
+    color: whitesmoke;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #17252a;
+}
+
+/*Presentation style*/
+
+div.presentation{
+    position: relative;
+    margin-left: 50px;
+    width: 70%;
+    background-color: #777777;
+    color: palegoldenrod;
+}
+
+div.presentation p{
+    font-size: 15px;
+}
+
+div.presentation ol{
+    list-style: upper-roman;
+}
+
+div.presentation ul{
+    list-style: square;
+}
+
+div.presentation img{
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    height: 100px;
+    width: 200px;
+}
+
+/*End of presentation style*/
+
+/*Define Header and Footer*/
+
+header{
+    background-color: darkgoldenrod;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: whitesmoke;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    background-color: #777777;
+}
+
+/*End of definition*/
+
+/*Define navigation bar*/
+
+#navbar{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 100%;
+    margin: 0;
+    list-style-type: none;
+    background-color: darkkhaki;
+}
+
+#navbar li{
+    margin: 5px 0;
+    padding: 5px;
+    display: block;
+}
+
+#navbar a {
+    display: block;
+    text-decoration: none;
+    color: firebrick;
+    height: 100%;
+}
+
+#navbar li:hover a{
+    color: whitesmoke;
+}
+
+#navbar li:hover{
+    background-color: dimgray;
+    width: 90%;
+}
+
+/*End of navigation bar*/
+
+a:link, a:visited{
+    color: dimgray;
+}
+
+/*Container for images*/
+
+#container{
+    background-color: white;
+    width: 50%;
+    text-align: center;
+    color: dimgray;
+    margin: 10px;
+}
+
+/*End of container definition*/
+
+/*Event definition*/
+
+#event{
+    background-color: white;
+    width: 50%;
+    text-align: center;
+    color: dimgray;
+    margin: 10px;
+}
+
+/*End of event definition*/
+
+/*Rainbow style*/
+
+#rainbow{
+    background-color: black;
+    width: 50%;
+    font-size: 25px;
+    margin: 10px;
+}
+
+/*End of rainbow style*/
